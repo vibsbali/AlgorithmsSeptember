@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using LinkedList.DoublyLinkedList;
+using System.Text;
 
-namespace LinkedList.SinglyLinkedList
+namespace LinkedList.DoublyLinkedList
 {
-    public class SingleLinkedList<T> : ICollection<T>
+    public class DoublyLinkedList<T> : ICollection<T>
         where T : IComparable<T>
     {
-        private SingleLinkedListNode<T> Head { get; set; }
-        private SingleLinkedListNode<T> Tail { get; set; }
-
+        public DoublyLinkedListNode<T> Head { get; set; }
+        public DoublyLinkedListNode<T> Tail { get; set; }
         public IEnumerator<T> GetEnumerator()
         {
             var current = Head;
@@ -28,25 +27,26 @@ namespace LinkedList.SinglyLinkedList
 
         public void Add(T item)
         {
-            var nodeToAdd = new SingleLinkedListNode<T>(item);
-
-            if (Head == null)
+            var nodeToAdd = new DoublyLinkedListNode<T>(item);
+            if (Tail == null)
             {
                 Head = Tail = nodeToAdd;
             }
             else
             {
                 Tail.Next = nodeToAdd;
+                nodeToAdd.Previous = Tail;
+
                 Tail = nodeToAdd;
             }
 
             ++Count;
-
         }
 
         public void Clear()
         {
-            Head = Tail = null;
+            Head = null;
+            Tail = null;
             Count = 0;
         }
 
@@ -77,47 +77,40 @@ namespace LinkedList.SinglyLinkedList
 
         public bool Remove(T item)
         {
-            SingleLinkedListNode<T> previous = null;
             var current = Head;
             while (current != null)
             {
-                //We have a match
                 if (current.Value.CompareTo(item) == 0)
                 {
-                    //We are at head
-                    if (previous == null)
+                    //are we at head
+                    if (current.Previous == null)
                     {
-                        //We are at tail too i.e. only one item in list
+                        //is head and tail same
                         if (current.Next == null)
                         {
                             Clear();
                             return true;
                         }
 
-                        Head = null;
-                        Head = current.Next;
+                        Head = current;
+                        Head.Previous = null;
                     }
-                    //We are not at head
+                    // are we at tail
+                    else if (current.Next == null)
+                    {
+                        Tail = current.Previous;
+                        Tail.Next = null;
+                    }
                     else
                     {
-                        //We have found tail
-                        if (current.Next == null)
-                        {
-                            current = Tail = null;
-                            Tail = previous;
-                        }
-                        else
-                        {
-                            previous.Next = current.Next;
-                        }
+                        current.Previous.Next = current.Next;
+                        current.Next.Previous = current.Previous;
                     }
 
                     --Count;
                     return true;
                 }
 
-
-                previous = current;
                 current = current.Next;
             }
 
