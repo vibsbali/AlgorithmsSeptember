@@ -5,7 +5,13 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedList", "LinkedList\LinkedList.csproj", "{ACC9DD1E-FAD1-4FB0-BCD7-B332DBD1DF51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinarySearchTree", "BinarySearchTree\BinarySearchTree.csproj", "{C55181B3-95ED-42C1-A4E8-0664323E4649}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinarySearchTree", "BinarySearchTree\BinarySearchTree.csproj", "{C55181B3-95ED-42C1-A4E8-0664323E4649}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackAndQueues", "StackAndQueues\StackAndQueues.csproj", "{F3716E08-C527-4DFE-AAB1-E031478E8D93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssociativeArrays", "AssociativeArrays\AssociativeArrays.csproj", "{AD75309D-34DD-4CE5-B43F-AD32CDD1EC77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicArrayAkaList", "DynamicArrayAkaList\DynamicArrayAkaList.csproj", "{54AFA178-589E-4206-B34A-5FB0D7713B0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{C55181B3-95ED-42C1-A4E8-0664323E4649}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C55181B3-95ED-42C1-A4E8-0664323E4649}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C55181B3-95ED-42C1-A4E8-0664323E4649}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3716E08-C527-4DFE-AAB1-E031478E8D93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3716E08-C527-4DFE-AAB1-E031478E8D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3716E08-C527-4DFE-AAB1-E031478E8D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3716E08-C527-4DFE-AAB1-E031478E8D93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD75309D-34DD-4CE5-B43F-AD32CDD1EC77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD75309D-34DD-4CE5-B43F-AD32CDD1EC77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD75309D-34DD-4CE5-B43F-AD32CDD1EC77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD75309D-34DD-4CE5-B43F-AD32CDD1EC77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54AFA178-589E-4206-B34A-5FB0D7713B0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54AFA178-589E-4206-B34A-5FB0D7713B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54AFA178-589E-4206-B34A-5FB0D7713B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54AFA178-589E-4206-B34A-5FB0D7713B0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
