@@ -155,40 +155,79 @@ namespace BinarySearchTree
                 //Found it
                 if (current.Value.CompareTo(value) == 0)
                 {
-                    //We are at root
-                    if (parent == null)
+                    // No left or right child
+                    if (current.LeftChild == null && current.RightChild == null)
                     {
-                        if (current.LeftChild == null && current.RightChild == null)
+                        //are we at root
+                        if (parent == null)
                         {
                             Root = null;
                         }
-                    }
-                    else
+                        else
+                        {
+                            if (parent > current)
+                            {
+                                parent.LeftChild = null;
+                            }
+                            else
+                            {
+                                parent.RightChild = null;
+                            }
+                        }
+                    }  // Has Left but no right
+                    else if (current.LeftChild != null && current.RightChild == null)
                     {
-                        // No left or right child
+                        if (parent == null)
+                        {
+                            Root = current.LeftChild;
+                        }
+                        else
+                        {
+                            if (parent > current)
+                            {
+                                parent.LeftChild = current.LeftChild;
+                            }
+                            else
+                            {
+                                parent.RightChild = current.RightChild;
+                            }
+                        }
+                    } // Has Right but that right has no left
+                    else if (current.RightChild != null && current.RightChild.LeftChild == null)
+                    {
+                        if (parent == null)
+                        {
+                            Root = current.RightChild;
+                        }
+                        else
+                        {
+                            if (parent > current)
+                            {
+                                parent.LeftChild = current.RightChild;
+                            }
+                            else
+                            {
+                                parent.RightChild = current.RightChild;
+                            }
+                        }
+                    }  // Has Right and that right has left child
 
-                        // Has Left but no right
 
-                        // Has Right but that right has no left
-
-                        // Has Right and that right has left child
-                    }
 
                     --Count;
                     return true;
                 }
-                else
+
+
+                //Otherwise
+                parent = current;
+                if (current.Value.CompareTo(value) < 0)
                 {
-                    //Otherwise
-                    parent = current;
-                    if (current.Value.CompareTo(value) < 0)
-                    {
-                        current = current.RightChild;
-                    }
-                    else if (current.Value.CompareTo(value) > 0)
-                    {
-                        current = current.LeftChild;
-                    }
+                    current = current.RightChild;
+                }
+                else if (current.Value.CompareTo(value) > 0)
+                {
+                    current = current.LeftChild;
                 }
             }
 
