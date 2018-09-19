@@ -4,4 +4,12 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Queues.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Queues.cs" />
+  </ItemGroup>
+
 </Project>

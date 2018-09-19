@@ -37,6 +37,11 @@ namespace DynamicArrayAkaList
 
       public void CheckResize()
       {
+         if (Count < InitialSize)
+         {
+            return;
+         }
+
          int newLength = 0;
 
          if (BackingStore.Length == Count)
