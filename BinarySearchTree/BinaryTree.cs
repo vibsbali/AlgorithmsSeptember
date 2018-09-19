@@ -85,9 +85,9 @@ namespace BinarySearchTree
         {
             if (current != null)
             {
-                RecursivelyPreOrder(current.LeftChild, actionToPerform);
+                RecursivelyInOrder(current.LeftChild, actionToPerform);
                 actionToPerform(current.Value);
-                RecursivelyPreOrder(current.RightChild, actionToPerform);
+                RecursivelyInOrder(current.RightChild, actionToPerform);
             }
         }
 
@@ -115,8 +115,8 @@ namespace BinarySearchTree
         {
             if (current != null)
             {
-                RecursivelyPreOrder(current.LeftChild, actionToPerform);
-                RecursivelyPreOrder(current.RightChild, actionToPerform);
+                RecursivelyPostOrder(current.LeftChild, actionToPerform);
+                RecursivelyPostOrder(current.RightChild, actionToPerform);
                 actionToPerform(current.Value);
             }
         }
