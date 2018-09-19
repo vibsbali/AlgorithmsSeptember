@@ -120,5 +120,79 @@ namespace BinarySearchTree
                 actionToPerform(current.Value);
             }
         }
+
+        public bool Contains(T value)
+        {
+            var current = Root;
+
+            while (current != null)
+            {
+                if (current.Value.CompareTo(value) == 0)
+                {
+                    return true;
+                }
+
+                if (current.Value.CompareTo(value) > 0)
+                {
+                    current = current.LeftChild;
+                }
+                else
+                {
+                    current = current.RightChild;
+                }
+            }
+
+            return false;
+        }
+
+        public bool Remove(T value)
+        {
+            var current = Root;
+            BinaryNode<T> parent = null;
+
+            while (current != null)
+            {
+                //Found it
+                if (current.Value.CompareTo(value) == 0)
+                {
+                    //We are at root
+                    if (parent == null)
+                    {
+                        if (current.LeftChild == null && current.RightChild == null)
+                        {
+                            Root = null;
+                        }
+                    }
+                    else
+                    {
+                        // No left or right child
+
+                        // Has Left but no right
+
+                        // Has Right but that right has no left
+
+                        // Has Right and that right has left child
+                    }
+
+                    --Count;
+                    return true;
+                }
+                else
+                {
+                    //Otherwise
+                    parent = current;
+                    if (current.Value.CompareTo(value) < 0)
+                    {
+                        current = current.RightChild;
+                    }
+                    else if (current.Value.CompareTo(value) > 0)
+                    {
+                        current = current.LeftChild;
+                    }
+                }
+            }
+
+            return false;
+        }
     }
 }
