@@ -4,6 +4,7 @@ namespace StackAndQueues
 {
    public class Queue<T>
    {
+       
       public Queue()
       {
          
@@ -18,5 +19,12 @@ namespace StackAndQueues
       {
 
       }
+
+       public bool TryDequeue<T>(out T value)
+       {
+
+       }
+
+
    }
 }

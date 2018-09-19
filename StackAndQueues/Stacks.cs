@@ -54,7 +54,7 @@ namespace StackAndQueues
          CheckResize();
          return true;
       }
-
+       
       public void CheckResize()
       {
          if (Count < InitialSize)
